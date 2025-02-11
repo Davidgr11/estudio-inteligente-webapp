@@ -29,16 +29,7 @@ const { data } = useFetch('/api/usuario');
                                 Este nombre será visible para otros usuarios
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="correo-electrónico"
-                                    placeholder="name@example.com" readonly :value="user?.email">
-                                <label for="correo-electrónico">
-                                    <BootstrapIconEnvelope />
-                                    Correo electrónico
-                                </label>
-                            </div>
-                        </div>
+                        
                         <div class="mb-3">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="plan" readonly
