@@ -8,8 +8,8 @@ const loading = ref(false)
 
 // Hardcodeando los valores de usuario y contraseña
 const login = reactive({
-    username: 'lety@studially.com',
-    password: 'Studially1-LR',
+    username: 'davidalejandro.gr11@gmail.com',
+    password: 'Studially1-DG',
 })
 
 const resetPassword = reactive({
