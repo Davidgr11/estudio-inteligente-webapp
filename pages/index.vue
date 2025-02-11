@@ -37,7 +37,7 @@ definePageMeta({
         </template>
         <template #body>
             <video class="card-img-top" controls controlsList="nodownload" poster="/img/Cover.png">
-                <source :src="`https://drive.google.com/file/d/1IzCDZKwCDHqogqu8XfvuPM5JR6fTL7wI/view?usp=sharing`"
+                <source :src="`https://drive.google.com/uc?export=download&id=1IzCDZKwCDHqogqu8XfvuPM5JR6fTL7wI`" 
                     type="video/mp4" v-if="!error">
                 Your browser does not support the video tag.
             </video>
