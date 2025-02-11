@@ -5,9 +5,11 @@ import {
 } from 'firebase/auth'
 
 const loading = ref(false)
+
+// Hardcodeando los valores de usuario y contraseña
 const login = reactive({
-    username: '',
-    password: '',
+    username: 'davidalejandro.gr11@gmail.com',
+    password: 'Studially1-DG',
 })
 
 const resetPassword = reactive({
@@ -32,7 +34,6 @@ async function submit() {
     try {
         const { user } = await signInWithEmailAndPassword(auth, login.username, login.password)
     } catch (error) {
-
         alert(error.message)
         return;
     }
@@ -48,65 +49,18 @@ async function submit() {
         <div class="card-header">
             <h3 class="card-title">
                 <BootstrapIconBoxArrowInRight />
-                Inicio de sesión
+                Demo
             </h3>
         </div>
         <div class="card-body">
             <form class="px-5 text-start" @submit.prevent="submit">
-                <div class="mb-3">
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" v-model="login.username"
-                            aria-describedby="emailHelp">
-                        <label for="email" class="form-label">
-                            <BootstrapIconEnvelope /> Correo
-                            electrónico
-                        </label>
-                        <div class="valid-feedback">
-                            <BootstrapIconCheck-circle /> Usuario recordado
-                        </div>
-                        <div id="emailHelp" class="form-text">
-                            <BootstrapIconShieldLock /> Nunca compartiremos tu correo con nadie más.
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="contraseña" v-model="login.password">
-                        <label for="contraseña" class="form-label">
-                            <BootstrapIconLock />
-                            Contraseña
-                        </label>
-                        <div class="invalid-feedback">
-                            <BootstrapIconX-circle /> Contraseña incorrecta
-                        </div>
-                        <div id="passwordHelp" class="form-text">
-                            <a href="#" class="text-decoration-none" data-bs-toggle="modal"
-                                data-bs-target="#recuperar-contraseña">
-                                <BootstrapIconQuestionCircle />
-                                Olvidé la contraseña
-                            </a>
-                        </div>
-                        <p class="text-center">
-                            ¿No tienes una cuenta? <a href="https://www.studially.com/estudiointeligente" target="_blank"
-                                class="text-decoration-none">
-                                Obtener una</a>
-                        </p>
-                        <p class="text-center">
-                            <a href="https://wa.me/message/3TJFVQ35CHB4A1" target="_blank"
-                                class="text-decoration-none btn btn-outline-primary">
-                                <BootstrapIconWhatsapp />
-                                Solicitar ayuda
-                            </a>
-                        </p>
-                    </div>
-                </div>
                 <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" id="iniciar-sesion" :disabled="loading">
+                    <button class="btn btn-primary btn-lg" id="enter" :disabled="loading">
                         <span class="spinner-border spinner-border-sm" role="status" v-if="loading" aria-hidden="true">
                         </span>
                         <span v-else>
                             <BootstrapIconBoxArrowInRight />
-                            Iniciar sesión
+                            Enter
                         </span>
                     </button>
                 </div>
@@ -131,7 +85,6 @@ async function submit() {
                         </div>
                     </div>
                     <div class="d-grid">
-
                         <button class="btn btn-outline-primary btn-lg" id="recuperar-contraseña" v-if="resetPassword.error"
                             @click.prevent="resetPassword.error = false; resetPassword.sent = false; resetPassword.email = ''"
                             :disabled="loading">
@@ -153,13 +106,10 @@ async function submit() {
                             </span>
                         </button>
 
-
                         <button class="btn btn-success btn-lg disabled" id="recuperar-contraseña" v-else disabled>
                             <BootstrapIconCheckCircle />
                             Enlace enviado
-
                         </button>
-
                     </div>
                 </form>
             </template>
