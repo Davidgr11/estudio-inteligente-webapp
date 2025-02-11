@@ -2,7 +2,7 @@
     
     <nav class="navbar fixed-bottom z-2">
         <div class="container">
-            &copy; 2023 DEVRI DESARROLLO VANGUARDISTA, RADICAL E INNOVADOR S.A.P.I. DE C.V. - TODOS LOS DERECHOS
+            &copy; 2025 ESTUDIO INTELIGENTE - TODOS LOS DERECHOS
             RESERVADOS
         </div>
     </nav>
